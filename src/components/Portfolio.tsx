@@ -34,39 +34,60 @@ function ThemeToggle() {
 export default function Portfolio() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "SmartHire HR system",
       description:
-        "React болон Node.js ашиглан хийсэн бүрэн дүүрэн онлайн дэлгүүр",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
-      liveUrl: "https://your-ecommerce.vercel.app",
-      image: "/placeholder.svg?height=200&width=400",
+        "Next.js болон Gemini AI ашиглан хийсэн CV шүүж match өгөх систем",
+      technologies: [
+        "Gemini AI",
+        "Next.js",
+        "React",
+        "PDF.js",
+        "Route Handlers",
+        "MongoDB",
+      ],
+      githubUrl: "https://github.com/Todkhuu/SmartHire",
+      liveUrl: "https://smart-hire-rouge.vercel.app/",
+      image: "/smarthire.png",
     },
     {
-      title: "Task Management App",
-      description:
-        "Next.js болон Supabase ашиглан хийсэн даалгавар удирдах апп",
-      technologies: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS"],
-      githubUrl: "https://github.com/yourusername/task-manager",
-      liveUrl: "https://your-taskmanager.vercel.app",
-      image: "/placeholder.svg?height=200&width=400",
+      title: "StyleCut Salon Booking App",
+      description: "Next.js ашиглан хийсэн салон цаг захиалгын апп",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Route Handlers",
+        "MongoDB",
+      ],
+      githubUrl: "https://github.com/Todkhuu/my-salon",
+      liveUrl: "https://my-salon-six.vercel.app/",
+      image: "/StyleCut.png",
     },
     {
-      title: "Weather Dashboard",
+      title: "Food delivery",
       description:
-        "OpenWeather API ашиглан хийсэн цаг агаарын мэдээлэл харуулах dashboard",
-      technologies: ["Vue.js", "Chart.js", "OpenWeather API", "CSS3"],
-      githubUrl: "https://github.com/yourusername/weather-dashboard",
-      liveUrl: "https://your-weather.vercel.app",
-      image: "/placeholder.svg?height=200&width=400",
+        "Хоол захиалгын web app хийв. Admin болон хэрэглэгчийн хуудастай",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Route Handlers",
+        "MongoDB",
+      ],
+      githubUrl: "https://github.com/Todkhuu/food_delivery_last",
+      liveUrl:
+        "https://food-delivery-last-291bypmyo-todkhuus-projects.vercel.app/",
+      image: "/food.png",
     },
     {
-      title: "Blog Platform",
-      description: "Markdown дэмжлэгтэй хувийн блог платформ",
-      technologies: ["Gatsby", "GraphQL", "Markdown", "Netlify CMS"],
-      githubUrl: "https://github.com/yourusername/blog-platform",
-      liveUrl: "https://your-blog.netlify.app",
-      image: "/placeholder.svg?height=200&width=400",
+      title: "Movie App",
+      description: "Гадны API ашиглан, киноны мэдээлэл харуулах web хийв",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Todkhuu/movie-app-be-2-10",
+      liveUrl: "https://movie-app-2-3.vercel.app/",
+      image: "/movie.png",
     },
   ];
 
@@ -359,7 +380,7 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="overflow-hidden hover:shadow-lg transition-shadow"
+                className="overflow-hidden hover:shadow-lg transition-shadow pt-0"
               >
                 <div className="aspect-video bg-muted">
                   <img
