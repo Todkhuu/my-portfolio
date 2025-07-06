@@ -452,7 +452,7 @@ export default function Portfolio() {
               Одоо би өөрийн ур чадварыг улам бүр хөгжүүлж, шинэ технологиуд
               судалж, өөрийн хувь нэмэрийг оруулахыг зорьж байна.
             </p>
-            <div className="flex justify-center gap-4 mt-8">
+            <div className="flex justify-center flex-wrap gap-4 mt-8">
               <Badge variant="secondary" className="text-sm py-2 px-4">
                 Bootcamp амжилттай төгссөн
               </Badge>
