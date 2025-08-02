@@ -13,6 +13,7 @@ import Link from "next/link";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -120,7 +121,13 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <ThemeToggle />
-      <section className="py-20 px-4 text-center">
+      <motion.section
+        className="py-20 px-4 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto">
           <div className="w-32 h-32 rounded-full mx-auto mb-8 flex items-center justify-center ">
             <Image
@@ -147,17 +154,29 @@ export default function Portfolio() {
             </Button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section - Compact Design */}
-      <section className="py-16 px-4 bg-muted/50">
+      <motion.section
+        className="py-16 px-4 bg-muted/50"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             Технологи & Ур чадвар
           </h2>
 
           {/* All skills in one clean grid */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mb-12">
+          <motion.div
+            className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 mb-12"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             {skills.map((skill) => (
               <div
                 key={skill.name}
@@ -179,7 +198,7 @@ export default function Portfolio() {
                 </span>
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Simple category badges */}
           <div className="text-center">
@@ -199,10 +218,16 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Education & Experience Section */}
-      <section className="py-16 px-4">
+      <motion.section
+        className="py-16 px-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             Боловсрол & Туршлага
@@ -266,8 +291,28 @@ export default function Portfolio() {
                 <div className="w-8 h-8 bg-green-500 rounded-full mr-3"></div>
                 Хөгжлийн замнал
               </h3>
-              <div className="space-y-6">
-                <div className="relative pl-8 border-l-2 border-muted">
+              <motion.div
+                className="space-y-6"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: {},
+                  show: {
+                    transition: {
+                      staggerChildren: 0.2,
+                    },
+                  },
+                }}
+              >
+                <motion.div
+                  className="relative pl-8 border-l-2 border-muted"
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
                   <div className="pb-6">
                     <div className="flex items-center justify-between mb-2">
@@ -280,9 +325,16 @@ export default function Portfolio() {
                       HTML, CSS, JavaScript үндсийг эзэмшсэн
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative pl-8 border-l-2 border-muted">
+                <motion.div
+                  className="relative pl-8 border-l-2 border-muted"
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-green-500 rounded-full"></div>
                   <div className="pb-6">
                     <div className="flex items-center justify-between mb-2">
@@ -295,9 +347,16 @@ export default function Portfolio() {
                       React, TypeScript, Tailwind CSS-г судалсан
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative pl-8 border-l-2 border-muted">
+                <motion.div
+                  className="relative pl-8 border-l-2 border-muted"
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-purple-500 rounded-full"></div>
                   <div className="pb-6">
                     <div className="flex items-center justify-between mb-2">
@@ -310,9 +369,16 @@ export default function Portfolio() {
                       Node.js, Express, MongoDB, API хөгжүүлэлт
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative pl-8">
+                <motion.div
+                  className="relative pl-8"
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-orange-500 rounded-full"></div>
                   <div>
                     <div className="flex items-center justify-between mb-2">
@@ -325,13 +391,19 @@ export default function Portfolio() {
                       Веб аппликейшн хөгжүүлэлт, deployment & PineQuest
                     </p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
 
           {/* Bootcamp Achievements */}
-          <div className="mt-12">
+          <motion.section
+            className="mt-12"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-2xl font-semibold text-center mb-8">
               Bootcamp-ын амжилтууд
             </h3>
@@ -366,17 +438,30 @@ export default function Portfolio() {
                 </p>
               </Card>
             </div>
-          </div>
+          </motion.section>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-4">
+      <motion.section
+        id="projects"
+        className="py-16 px-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             Миний төслүүд
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             {projects.map((project, index) => (
               <Card
                 key={index}
@@ -428,12 +513,18 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Updated About Section */}
-      <section className="py-16 px-4 bg-muted/50">
+      <motion.section
+        className="py-16 px-4 bg-muted/50"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Миний тухай</h2>
           <div className="prose prose-lg mx-auto text-muted-foreground">
@@ -465,17 +556,43 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4">
+      <motion.section
+        id="contact"
+        className="py-16 px-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Холбоо барих</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Хамтран ажиллах, эсвэл зүгээр л уулзахыг хүсвэл надтай холбогдоорой!
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <div className="flex items-center gap-2">
+          <motion.div
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+          >
+            <motion.div
+              className="flex items-center gap-2"
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0 },
+              }}
+            >
               <Mail className="h-5 w-5 text-muted-foreground" />
               <Link
                 href="mailto:todoo.zorigtbaatar@gmail.com"
@@ -483,19 +600,37 @@ export default function Portfolio() {
               >
                 todoo.zorigtbaatar@gmail.com
               </Link>
-            </div>
-            <div className="flex items-center gap-2">
+            </motion.div>
+            <motion.div
+              className="flex items-center gap-2"
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0 },
+              }}
+            >
               <Phone className="h-5 w-5 text-muted-foreground" />
               <Link href="tel:+976-9549-7062" className="hover:underline">
                 +976-9549-7062
               </Link>
-            </div>
-            <div className="flex items-center gap-2">
+            </motion.div>
+            <motion.div
+              className="flex items-center gap-2"
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0 },
+              }}
+            >
               <MapPin className="h-5 w-5 text-muted-foreground" />
               <span>Улаанбаатар, Монгол</span>
-            </div>
-          </div>
-          <div className="flex gap-4 justify-center mt-8">
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="flex gap-4 justify-center mt-8"
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              show: { opacity: 1, y: 0 },
+            }}
+          >
             <Button variant="outline" asChild>
               <Link
                 href="https://github.com/Todkhuu"
@@ -515,12 +650,18 @@ export default function Portfolio() {
                 LinkedIn
               </Link>
             </Button> */}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t bg-muted/50"></footer>
+      <motion.footer
+        className="py-8 px-4 border-t bg-muted/50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      ></motion.footer>
     </div>
   );
 }
