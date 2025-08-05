@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 import { HeroSection } from "./HeroSection";
 import { SkillsSection } from "./SkillsSection";

@@ -31,21 +31,12 @@ export const projects = [
     image: "/StyleCut.png",
   },
   {
-    title: "Food delivery",
-    description:
-      "Хоол захиалгын web app хийв. Admin болон хэрэглэгчийн хуудастай",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Route Handlers",
-      "MongoDB",
-    ],
-    githubUrl: "https://github.com/Todkhuu/food_delivery_last",
-    liveUrl:
-      "https://food-delivery-last-291bypmyo-todkhuus-projects.vercel.app/",
-    image: "/food.png",
+    title: "Portfolio",
+    description: "Маникюр артистын portfolio",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/Todkhuu/Nail",
+    liveUrl: "https://nail-opal.vercel.app/",
+    image: "/nail.png",
   },
   {
     title: "Movie App",
