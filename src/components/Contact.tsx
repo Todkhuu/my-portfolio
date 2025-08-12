@@ -17,7 +17,7 @@ export const Contact = () => {
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">Холбоо барих</h2>
         <p className="text-lg text-muted-foreground mb-8">
-          Хамтран ажиллах, эсвэл зүгээр л уулзахыг хүсвэл надтай холбогдоорой!
+          Хамтран ажиллахыг хүсвэл надтай холбогдоорой!
         </p>
         <motion.div
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
